@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreenda a Saúde</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f8f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            background-color: #e8f5e9;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #4caf50;
+        }
+
+        footer {
+            background-color: #4caf50;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-custom {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #45a049;
+        }
+
+        .question-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card-header {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand text-white" href="#">Empreenda a Saúde</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#how-it-works">Como Funciona</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Bem-vindo ao Empreenda a Saúde</h1>
+            <p>Facilitando seu agendamento no SUS e melhorando sua experiência.</p>
+            <a href="#how-it-works" class="btn btn-custom mt-3">Comece Agora</a>
+        </div><br>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="questionsModal" tabindex="-1" aria-labelledby="questionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="questionsModalLabel">Perguntas para Agendamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Pergunta 1 -->
+                        <div class="form-group">
+                            <label for="idioma">Qual o idioma?</label>
+                            <select class="form-control" id="idioma" required>
+                                <option value="">Selecione</option>
+                                <option value="portugues">Português</option>
+                                <option value="ingles">Inglês</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 2 -->
+                        <div class="form-group">
+                            <label for="nome">Qual é o seu nome?</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                        </div>
+
+                        <!-- Pergunta 3 -->
+                        <div class="form-group">
+                            <label for="idade">Quantos anos você tem?</label>
+                            <input type="number" class="form-control" id="idade" placeholder="Digite sua idade"
+                                required>
+                        </div>
+
+                        <!-- Pergunta 4 -->
+                        <div class="form-group">
+                            <label for="consulta">Você está querendo marcar uma consulta para:</label>
+                            <select class="form-control" id="consulta" required>
+                                <option value="">Selecione</option>
+                                <option value="psicologo">Psicólogo</option>
+                                <option value="psiquiatra">Psiquiatra</option>
+                                <option value="doente">Estou doente</option>
+                                <option value="familia">Algum membro da minha família está doente</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 5 -->
+                        <div class="form-group">
+                            <label for="data">Alguma preferência de data?</label>
+                            <input type="date" class="form-control" id="data">
+                        </div>
+
+                        <!-- Pergunta 6 -->
+                        <div class="form-group">
+                            <label for="horario">Qual horário você prefere?</label>
+                            <select class="form-control" id="horario" required>
+                                <option value="">Selecione</option>
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-custom">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2 class="section-title">Sobre o Empreenda a Saúde</h2>
+            <p>O "Empreenda a Saúde" é uma plataforma inovadora criada com o propósito de otimizar o processo de
+                agendamento de consultas no Sistema Único de Saúde (SUS). Nosso objetivo é proporcionar uma experiência
+                mais eficiente e tranquila tanto para os pacientes quanto para os profissionais de saúde, através de
+                tecnologia avançada e um atendimento mais ágil.</p>
+            <p>Sabemos o quão desafiador pode ser enfrentar longas filas e esperar dias ou até semanas para conseguir um
+                atendimento médico. Por isso, nossa missão é transformar essa realidade, garantindo que todos tenham
+                acesso rápido e fácil a consultas essenciais para o seu bem-estar.</p>
+
+            <h3 class="section-title">Por que o Empreenda a Saúde?</h3>
+            <p>A plataforma foi desenvolvida com base nas necessidades reais dos cidadãos que dependem do SUS para
+                cuidados médicos. O sistema busca eliminar as barreiras do processo de agendamento, proporcionando:</p>
+            <ul>
+                <li><strong>Agilidade:</strong> O agendamento é feito de maneira simples e rápida, sem burocracia.</li>
+                <li><strong>Transparência:</strong> Todos os passos do agendamento são visíveis e claros para os
+                    usuários, evitando surpresas.</li>
+                <li><strong>Acessibilidade:</strong> O sistema é projetado para ser intuitivo, permitindo que qualquer
+                    pessoa, independente da idade ou conhecimento em tecnologia, consiga realizar o agendamento de forma
+                    fácil.</li>
+                <li><strong>Precisão:</strong> O usuário pode selecionar a especialidade desejada, escolher a unidade de
+                    saúde mais próxima e verificar a disponibilidade de horários em tempo real.</li>
+            </ul>
+
+            <h3 class="section-title">Como Funciona?</h3>
+            <p>O processo de agendamento no Empreenda a Saúde é simples e rápido. Veja como funciona:</p>
+            <ul>
+                <li><strong>Escolha de Idioma:</strong> O sistema oferece a opção de escolher o idioma desejado,
+                    tornando o processo acessível a mais pessoas.</li>
+                <li><strong>Cadastro Pessoal:</strong> O usuário preenche um cadastro simples com suas informações
+                    pessoais (como nome, CPF, e idade).</li>
+                <li><strong>Seleção de Especialidade:</strong> O usuário escolhe o tipo de consulta que deseja agendar,
+                    como psicologia, psiquiatria ou outras especialidades médicas.</li>
+                <li><strong>Consulta de Disponibilidade:</strong> A plataforma exibe uma lista de horários disponíveis
+                    nas unidades de saúde mais próximas ao usuário, para que ele possa escolher a melhor opção.</li>
+                <li><strong>Confirmação e Agendamento:</strong> Após a escolha do horário, o agendamento é confirmado, e
+                    o usuário recebe um e-mail ou SMS com todos os detalhes da consulta.</li>
+            </ul>
+
+            <h3 class="section-title">Nossos Diferenciais</h3>
+            <p>O "Empreenda a Saúde" se destaca por diversos aspectos que o tornam uma solução única e altamente
+                eficiente:</p>
+            <ul>
+                <li><strong>Integração com o SUS:</strong> A plataforma é totalmente integrada ao Sistema Único de
+                    Saúde, garantindo que todos os dados e informações estejam atualizados e em conformidade com as
+                    exigências do governo.</li>
+                <li><strong>Agendamento Sem Papelada:</strong> Não é necessário levar documentos físicos ao posto de
+                    saúde. Todos os dados são registrados de forma eletrônica, proporcionando mais comodidade.</li>
+                <li><strong>Atendimento ao Usuário:</strong> Nosso suporte está disponível para esclarecer dúvidas e
+                    resolver problemas, seja por chat, telefone ou e-mail.</li>
+                <li><strong>Melhoria Contínua:</strong> Estamos sempre buscando aprimorar nossos serviços com base no
+                    feedback dos usuários, garantindo que a plataforma evolua constantemente para melhor atendê-los.
+                </li>
+            </ul>
+
+            <h3 class="section-title">O Impacto do Empreenda a Saúde</h3>
+            <p>Ao utilizar a plataforma, os usuários não só economizam tempo, mas também têm a certeza de que estão
+                fazendo parte de uma iniciativa que visa a modernização e a melhoria do sistema de saúde pública no
+                Brasil. O "Empreenda a Saúde" não é apenas uma ferramenta de agendamento, mas uma verdadeira
+                transformação na maneira como os cidadãos interagem com o SUS.</p>
+            <p>Com o objetivo de reduzir filas e agilizar o atendimento médico, nosso impacto vai além do digital.
+                Estamos contribuindo para um futuro onde todos têm acesso rápido a cuidados médicos, com eficiência e
+                dignidade.</p>
+
+            <h3 class="section-title">Junte-se ao Empreenda a Saúde</h3>
+            <p>Faça parte dessa transformação. Se você é um cidadão que deseja agendar suas consultas de forma rápida e
+                eficiente ou um profissional de saúde que quer oferecer um atendimento mais ágil, o "Empreenda a Saúde"
+                é a solução ideal. Juntos, podemos fazer a diferença e tornar o SUS ainda mais eficiente.</p>
+            <p><strong>Empreenda a Saúde: O futuro do SUS começa agora!</strong></p>
+        </section>
+
+
+        <section id="how-it-works" class="section">
+            <h2 class="section-title">Como Funciona?</h2>
+            <ul>
+                <li>Escolha seu idioma e preencha suas informações pessoais.</li>
+                <li>Selecione o tipo de consulta que deseja agendar.</li>
+                <li>Confira os horários disponíveis e marque sua consulta de forma prática.</li>
+            </ul>
+            <a href="#" class="btn btn-custom mt-3">Saiba Mais</a>
+        </section>
+
+        <center>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#questionsModal">
+                Acessar Perguntas
+            </button>
+        </center>
+        <br><br>
+
+        <section id="faq" class="section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Como posso cancelar uma consulta?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Para cancelar sua consulta, entre em contato conosco por e-mail ou telefone.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Quais tipos de consultas posso agendar?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Oferecemos agendamento para diversas especialidades, incluindo psicologia e psiquiatria.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Como sei se minha consulta foi confirmada?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Você receberá um e-mail ou SMS confirmando a data e hora de sua consulta.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Preciso de um documento para agendar a consulta?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Sim, será necessário informar seu CPF e um documento com foto.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                E se eu perder minha consulta?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Caso perca sua consulta, será necessário remarcar de acordo com a disponibilidade.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Posso alterar a data e horário da minha consulta?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Sim, você pode alterar a consulta com antecedência através do nosso site ou contato
+                            telefônico.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Como posso saber se a consulta está disponível na unidade de saúde próxima?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Durante o agendamento, o sistema verifica automaticamente a disponibilidade nas unidades
+                            próximas.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingEight">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                A consulta é gratuita?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Sim, todas as consultas agendadas pelo sistema são gratuitas, pois são realizadas pelo SUS.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingNine">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                Posso agendar para outra pessoa?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Sim, você pode agendar para outra pessoa, desde que informe os dados corretos durante o
+                            processo de
+                            agendamento.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTen">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                Como posso entrar em contato para mais informações?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Você pode entrar em contato conosco através do telefone ou e-mail disponíveis no site.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Empreenda a Saúde. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

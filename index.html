@@ -169,76 +169,86 @@
     </section>
     <!-- Modal -->
     <div class="modal fade" id="questionsModal" tabindex="-1" aria-labelledby="questionsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="questionsModalLabel">Perguntas para Agendamento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="modalContent">
-                    <form id="questionForm">
-                        <!-- Pergunta 1 -->
-                        <div class="form-group">
-                            <label for="idioma">Qual o idioma?</label>
-                            <select class="form-control" id="idioma" required>
-                                <option value="">Selecione</option>
-                                <option value="portugues">Português</option>
-                                <option value="ingles">Inglês</option>
-                            </select>
-                        </div>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="questionsModalLabel">Perguntas para Agendamento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalContent">
+                <form id="questionForm">
+                    <!-- Pergunta 1 -->
+                    <div class="form-group">
+                        <label for="idioma">Qual o idioma?</label>
+                        <select class="form-control" id="idioma" required>
+                            <option value="">Selecione</option>
+                            <option value="portugues">Português</option>
+                            <option value="ingles">Inglês</option>
+                            <option value="espanhol">Espanhol</option>
+                            <option value="frances">Francês</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
 
-                        <!-- Pergunta 2 -->
-                        <div class="form-group">
-                            <label for="nome">Qual é o seu nome?</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
-                        </div>
+                    <!-- Pergunta 4 -->
+                    <div class="form-group">
+                        <label for="consulta">Você está querendo marcar uma consulta para:</label>
+                        <select class="form-control" id="consulta" required>
+                            <option value="">Selecione</option>
+                            <option value="psicologo">Psicólogo</option>
+                            <option value="psiquiatra">Psiquiatra</option>
+                            <option value="medico_geral">Médico Geral</option>
+                            <option value="dentista">Dentista</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
 
-                        <!-- Pergunta 3 -->
-                        <div class="form-group">
-                            <label for="idade">Quantos anos você tem?</label>
-                            <input type="number" class="form-control" id="idade" placeholder="Digite sua idade"
-                                required>
-                        </div>
+                    <!-- Pergunta 6 -->
+                    <div class="form-group">
+                        <label for="horario">Qual horário você prefere?</label>
+                        <select class="form-control" id="horario" required>
+                            <option value="">Selecione</option>
+                            <option value="manha">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noite">Noite</option>
+                            <option value="qualquer">Qualquer horário</option>
+                        </select>
+                    </div>
 
-                        <!-- Pergunta 4 -->
-                        <div class="form-group">
-                            <label for="consulta">Você está querendo marcar uma consulta para:</label>
-                            <select class="form-control" id="consulta" required>
-                                <option value="">Selecione</option>
-                                <option value="psicologo">Psicólogo</option>
-                                <option value="psiquiatra">Psiquiatra</option>
-                                <option value="doente">Estou doente</option>
-                                <option value="familia">Algum membro da minha família está doente</option>
-                            </select>
-                        </div>
+                    <!-- Pergunta 8 -->
+                    <div class="form-group">
+                        <label for="modoContato">Qual é o melhor modo de contato?</label>
+                        <select class="form-control" id="modoContato" required>
+                            <option value="">Selecione</option>
+                            <option value="telefone">Telefone</option>
+                            <option value="email">Email</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="sms">SMS</option>
+                            <option value="qualquer">Qualquer um</option>
+                        </select>
+                    </div>
 
-                        <!-- Pergunta 5 -->
-                        <div class="form-group">
-                            <label for="data">Alguma preferência de data?</label>
-                            <input type="date" class="form-control" id="data">
-                        </div>
-
-                        <!-- Pergunta 6 -->
-                        <div class="form-group">
-                            <label for="horario">Qual horário você prefere?</label>
-                            <select class="form-control" id="horario" required>
-                                <option value="">Selecione</option>
-                                <option value="manha">Manhã</option>
-                                <option value="tarde">Tarde</option>
-                                <option value="noite">Noite</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-custom" onclick="submitForm()">Enviar</button>
-                </div>
+                    <!-- Pergunta 10 -->
+                    <div class="form-group">
+                        <label for="seguro">Você possui seguro saúde?</label>
+                        <select class="form-control" id="seguro" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                            <option value="nao_sei">Não sei</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-custom" onclick="submitForm()">Enviar</button>
             </div>
         </div>
     </div>
+</div>
 
     <script>
         function submitForm() {

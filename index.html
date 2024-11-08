@@ -177,7 +177,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="modalContent">
+            <div class="modal-body" id="modalContent" style="max-height: 500px; overflow-y: auto;">
                 <form id="questionForm">
                     <!-- Pergunta 1 -->
                     <div class="form-group">
@@ -190,6 +190,18 @@
                             <option value="frances">Francês</option>
                             <option value="outro">Outro</option>
                         </select>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="form-group">
+                        <label for="nome">Qual é o seu nome?</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="form-group">
+                        <label for="idade">Quantos anos você tem?</label>
+                        <input type="number" class="form-control" id="idade" placeholder="Digite sua idade" required>
                     </div>
 
                     <!-- Pergunta 4 -->
@@ -205,6 +217,12 @@
                         </select>
                     </div>
 
+                    <!-- Pergunta 5 -->
+                    <div class="form-group">
+                        <label for="data">Alguma preferência de data?</label>
+                        <input type="date" class="form-control" id="data">
+                    </div>
+
                     <!-- Pergunta 6 -->
                     <div class="form-group">
                         <label for="horario">Qual horário você prefere?</label>
@@ -215,6 +233,12 @@
                             <option value="noite">Noite</option>
                             <option value="qualquer">Qualquer horário</option>
                         </select>
+                    </div>
+
+                    <!-- Pergunta 7 -->
+                    <div class="form-group">
+                        <label for="necessidades">Você possui alguma necessidade especial que deveríamos considerar?</label>
+                        <input type="text" class="form-control" id="necessidades" placeholder="Descreva se houver">
                     </div>
 
                     <!-- Pergunta 8 -->
@@ -228,6 +252,12 @@
                             <option value="sms">SMS</option>
                             <option value="qualquer">Qualquer um</option>
                         </select>
+                    </div>
+
+                    <!-- Pergunta 9 -->
+                    <div class="form-group">
+                        <label for="historico">Possui algum histórico médico relevante para o agendamento?</label>
+                        <textarea class="form-control" id="historico" rows="3" placeholder="Descreva se necessário"></textarea>
                     </div>
 
                     <!-- Pergunta 10 -->
@@ -249,7 +279,8 @@
         </div>
     </div>
 </div>
-
+    
+    
     <script>
         function submitForm() {
             // Substitui o conteúdo do modal por uma mensagem de confirmação
